@@ -1,0 +1,35 @@
+<section id="experience">
+  <div class="container">
+    <div class="section-content">
+      <p class="section-label">Experiência</p>
+
+      <div class="space-y-8">
+        @for (exp of experiences; track exp.company) {
+          <div class="experience-item">
+            <div class="mb-4">
+              <h3 class="text-theme-primary font-medium text-base sm:text-lg leading-snug mb-2">
+                {{ exp.role }}
+              </h3>
+              
+              <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                <span class="text-theme-body text-sm">{{ exp.company }}</span>
+                <span class="hidden sm:inline text-theme-faint">·</span>
+                <span class="text-theme-subtle text-xs sm:text-sm mt-1 sm:mt-0">{{ exp.period }}</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 pl-5 sm:pl-0">
+              @for (item of exp.description; track item) {
+                <li class="text-theme-muted text-sm leading-loose relative sm:flex sm:gap-3">
+                  <span class="absolute -left-5 top-2 w-1.5 h-1.5 rounded-full bg-theme-tertiary sm:hidden"></span>
+                  <span class="hidden sm:inline text-theme-faint flex-shrink-0">—</span>
+                  <span>{{ item }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

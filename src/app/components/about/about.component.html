@@ -1,0 +1,29 @@
+<section id="about">
+  <div class="container">
+    <div class="section-content">
+      <p class="section-label">Sobre</p>
+
+      <div class="about-text-block">
+        <p class="text-theme-secondary text-base sm:text-lg leading-loose">
+          Desenvolvedor de software e entusiasta em segurança da informação.
+        </p>
+        
+        <p class="leading-loose text-sm sm:text-base text-theme-body" style="margin-top: 1.5rem;">
+          Gosto de encontrar soluções que possam impactar positivamente uma organização 
+          e as pessoas que ela atende.
+        </p>
+        
+        <p class="leading-loose text-sm sm:text-base text-theme-body" style="margin-top: 1.5rem;">
+          Valorizo a manutenção de uma postura de segurança sólida para ajudar a proteger 
+          informações confidenciais e mitigar riscos, alinhada às práticas de desenvolvimento seguro.
+        </p>
+      </div>
+
+        <div class="skills-container">
+          @for (skill of skills; track skill.name) {
+            <span class="skill-tag">{{ skill.name }}</span>
+          }
+        </div>
+    </div>
+  </div>
+</section>

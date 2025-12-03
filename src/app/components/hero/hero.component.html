@@ -1,0 +1,46 @@
+<section id="hero" class="visible">
+  <div class="container">
+    <div class="section-content">
+      <p class="hero-greeting">
+        Olá, eu sou
+      </p>
+
+      <h1 class="hero-name">
+        Patrick<span class="text-theme-subtle">.</span>
+      </h1>
+
+      <p class="hero-description">
+        Desenvolvedor Full-Stack com foco em 
+        <span class="text-theme-secondary">.NET</span>, 
+        <span class="text-theme-secondary">C#</span>, 
+        <span class="text-theme-secondary">Angular</span> e 
+        <span class="text-theme-secondary">Oracle PL/SQL</span>.
+      </p>
+
+      <p class="hero-subtitle">
+        Desenvolvendo sistemas web com arquitetura limpa e boas práticas.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="mailto:seu-email@email.com" class="btn btn-primary">
+          Entre em contato
+        </a>
+        <a href="#projects" class="btn btn-outline">
+          Ver projetos
+        </a>
+      </div>
+
+      <div class="hero-social">
+        @for (social of socialLinks; track social.name) {
+          <a [href]="social.url" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="social-link"
+             [attr.aria-label]="social.name">
+            <span [innerHTML]="social.icon"></span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>
