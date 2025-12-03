@@ -1,0 +1,27 @@
+<div class="min-h-screen">
+  <app-header></app-header>
+  
+  <nav class="nav-dots">
+    @for (section of sectionIds; track section.id; let i = $index) {
+      <button 
+        (click)="goToSection(i)"
+        [class.active]="currentSectionIndex === i"
+        [attr.aria-label]="'Ir para ' + section.label">
+        <span class="dot"></span>
+        <span class="label">{{ section.label }}</span>
+      </button>
+    }
+  </nav>
+
+  <app-theme-toggle></app-theme-toggle>
+  
+  <main>
+    <app-hero></app-hero>
+    <app-about></app-about>
+    <app-experience></app-experience>
+    <app-projects></app-projects>
+    <app-contact></app-contact>
+  </main>
+  
+  <app-footer></app-footer>
+</div>
