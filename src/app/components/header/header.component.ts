@@ -44,4 +44,13 @@ export class HeaderComponent implements OnInit {
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
   }
+
+  scrollTo(href: string): void {
+    this.closeMobileMenu();
+    const elementId = href.replace('#', '');
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

@@ -3,12 +3,12 @@
     <div class="section-content">
       <p class="section-label">Contato</p>
 
-      <div class="mb-10">
-        <p class="text-theme-secondary text-lg sm:text-xl mb-4">
+      <div class="contact-intro">
+        <p class="contact-title">
           Vamos conversar?
         </p>
         
-        <p class="text-theme-muted leading-loose mb-8 text-sm sm:text-base">
+        <p class="contact-text">
           Estou disponível para novos projetos e oportunidades. 
           Se tiver alguma pergunta ou quiser trabalhar junto, entre em contato.
         </p>
@@ -20,19 +20,21 @@
 
       <div class="divider"></div>
 
-      <div class="space-y-2">
+      <div class="contact-methods">
         @for (method of contactMethods; track method.name) {
           <a [href]="method.url" 
              target="_blank"
              rel="noopener noreferrer"
-             class="flex items-center justify-between py-4 group border-b border-theme-divider last:border-b-0">
-            <div class="flex items-center gap-4">
-              <span class="text-theme-subtle" [innerHTML]="method.icon"></span>
-              <span class="text-theme-body text-sm sm:text-base group-hover:text-theme-primary transition-colors">{{ method.name }}</span>
+             class="contact-method">
+            <div class="contact-method-info">
+              <span class="contact-method-icon" [innerHTML]="method.icon"></span>
+              <span class="contact-method-name">{{ method.name }}</span>
             </div>
-            <svg class="w-5 h-5 text-theme-faint group-hover:text-theme-muted transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
+            <span class="contact-method-arrow">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </span>
           </a>
         }
       </div>
