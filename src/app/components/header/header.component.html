@@ -1,54 +1,49 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#1f1f1f]">
-  <nav class="container">
-    <div class="flex justify-between items-center h-16">
-      <a href="#hero" class="text-[#fafafa] font-medium text-lg">
-        Patrick<span class="text-[#525252]">.</span>
-      </a>
+<header class="site-header">
+  <nav class="header-container">
+    <a (click)="scrollTo('#hero')" class="logo" style="cursor: pointer;">
+      Patrick<span class="logo-dot">.</span>
+    </a>
 
-      <ul class="hidden md:flex items-center gap-8">
+    <ul class="nav-desktop">
+      @for (link of navLinks; track link.label) {
+        <li>
+          <a (click)="scrollTo(link.href)" class="nav-link" style="cursor: pointer;">
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="contact-btn-desktop">
+      <a href="mailto:seu-email@email.com" class="btn btn-secondary">
+        Contato
+      </a>
+    </div>
+
+    <button (click)="toggleMobileMenu()" class="mobile-menu-btn">
+      @if (!isMobileMenuOpen) {
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      } @else {
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      }
+    </button>
+  </nav>
+
+  @if (isMobileMenuOpen) {
+    <div class="mobile-menu">
+      <ul>
         @for (link of navLinks; track link.label) {
           <li>
-            <a [href]="link.href" class="nav-link">
+            <a (click)="scrollTo(link.href)">
               {{ link.label }}
             </a>
           </li>
         }
       </ul>
-
-      <div class="hidden md:block">
-        <a href="mailto:seu-email@email.com" class="btn btn-secondary text-sm">
-          Contato
-        </a>
-      </div>
-
-      <button (click)="toggleMobileMenu()" 
-              class="md:hidden text-[#737373] hover:text-[#fafafa] transition-colors p-2">
-        @if (!isMobileMenuOpen) {
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        } @else {
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        }
-      </button>
     </div>
-
-    @if (isMobileMenuOpen) {
-      <div class="md:hidden py-4 border-t border-[#1f1f1f]">
-        <ul class="space-y-1">
-          @for (link of navLinks; track link.label) {
-            <li>
-              <a [href]="link.href" 
-                 (click)="closeMobileMenu()"
-                 class="block py-2 text-[#737373] hover:text-[#fafafa] transition-colors">
-                {{ link.label }}
-              </a>
-            </li>
-          }
-        </ul>
-      </div>
-    }
-  </nav>
+  }
 </header>
