@@ -22,11 +22,11 @@ export class ExperienceComponent {
       role: 'Desenvolvedor Full-Stack',
       period: 'Ago 2025 - Presente',
       description: [
-        'Desenvolvimento e manutenção de sistemas web, atuando nas camadas de frontend e backend.',
-        'Backend com C# (.NET), DDD, NHibernate e LINQ para implementação de regras de negócio.',
-        'Consultas e integrações com banco de dados Oracle PL/SQL.',
-        'Frontend com Angular, desenvolvendo componentes, eventos e integrações com a API.',
-        'Aplicação de arquitetura de software, código limpo e boas práticas de desenvolvimento.'
+        ' Desenvolvimento e manutenção de sistemas web utilizando .NET (C#) e Angular.',
+        ' DDD, NHibernate e LINQ para implementação de regras de negócio.',
+        ' Consultas e integrações com banco de dados Oracle PL/SQL.',
+        ' Angular, desenvolvendo componentes, eventos e integrações com a API.',
+        ' Arquitetura de software, código limpo e boas práticas de desenvolvimento.'
       ]
     },
     {
@@ -34,10 +34,10 @@ export class ExperienceComponent {
       role: 'Desenvolvedor AutoPlay',
       period: 'Fev 2025 - Ago 2025',
       description: [
-        'Aprendizado e atuação no desenvolvimento de sistemas web corporativos.',
-        'Desenvolvimento com .NET (C#), Angular e Oracle PL/SQL.',
-        'Aplicação de padrões DDD, NHibernate e LINQ.',
-        'Participação em projetos de manutenção e evolução de sistemas.'
+        ' Aprendizado e atuação no desenvolvimento de sistemas web corporativos.',
+        ' Desenvolvimento com .NET (C#), Angular e Oracle PL/SQL.',
+        ' Aplicação de padrões DDD, NHibernate e LINQ.',
+        ' Participação em projetos de manutenção e evolução de sistemas.'
       ]
     }
   ];
